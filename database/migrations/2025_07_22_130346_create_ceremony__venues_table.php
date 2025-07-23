@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ceremony__venues', function (Blueprint $table) {
+           $table->softDeletes();
             $table->uuid('id')->primary();
             $table->foreignUuid('couple_id');
             $table->foreignUuid('inventory_id');
